@@ -1,0 +1,231 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% This is an example of a resume made using the smooth banner class.
+%%
+%% The commands and accompanying comments are meant to illustrate the
+%% capabilities and features of this class
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,a4paper]{smooth-banner-cv}
+
+% The CV class requires a name to be specified
+\sbname{Errico Malatesta} %Your name
+\sbjobtitle{Thinker} %Your job title is optional
+
+\begin{document}
+
+%% At the beginning of each page the sidebar should be defined in which to
+%% specify all the elements it will include. These can be:
+%% 1. Profile picture (typically placed in the first page)
+%% 2. Profile info (typically placed in the first page)
+%% 3. Text entry (e.g. About me)
+%% 4. Skills in bars format
+%% 5. Skills in table format
+%% Each sidebar element should have a title specified by \sidesection{title} and
+%% any number of the above elements can be specified
+
+\begin{sidebar}
+
+  % Specify path to profile picture
+  \makeprofilepic{me.jpg}
+
+  % Profile info make use of fontawesome icons which have a large set of icons
+  % found here
+  % ftp://ftp.dante.de/tex-archive/fonts/fontawesome/doc/fontawesome.pdf
+  % The entries can also be links pointing to the specified website or social
+  % media account.
+  \begin{profileinfo}
+    \icon{\faBirthdayCake} & 14 December 1853 \\
+    \icon{\faFlag} & Italian \\
+    \icon{\faHome} & Ferrovia, 28\newline 12345, Rome \newline Italy\\
+    \icon{\faPhone} & +39 123456789\\
+    \icon{\faEnvelope} & \href{mailto:errico@malatesta.it}{errico@malatesta.it}\\
+    \icon{\faSkype} & example\\
+    \icon{\faGlobe} & \href{https://example.com}{example.com}\\
+    \icon{\faGithub} & \href{https://github.com/example}{example}\\
+    \icon{\faLinkedin} & \href{https://linked.com/example}{example}\\
+    %\icon{\faWhatsapp} & example\\
+    %\icon{\faSlack} & example\\
+    %\icon{\faTumblr} & \href{https://tumblr.com/example}{example}\\
+    %\icon{\faYoutube} & \href{https://youtube.com/example}{example}\\
+    %\icon{\faTwitter} & \href{https://twitter.com/example}{example}\\
+    %\icon{\faFacebook} & \href{https://facebook.com/example}{example}\\
+    %\icon{\faRedditAlien} & \href{https://reddit.com/user/example}{example}\\
+    \icon{\faKey} & AAAA 0000
+  \end{profileinfo}
+
+  % Text sidebar element
+  \sidebarsection{About me}
+  
+  {\justifying I am a free thinker with a rebellious spirit.}
+
+  % Bars sidebar element
+  \sidebarsection{Programming}
+
+  % The bars skills are specified in format ``name/value''. The values range is [0,12]
+  \barskills{{C/C++}/10,Python/5,Mathematica/8,LaTeX/10}
+
+  % A second Bars sidebar element
+  \sidebarsection{Web Development}
+
+  \barskills{{HTML, CSS/10},Jekyll/8}
+  
+  {\footnotesize\noindent\hspace{-5pt}(*) The scale is in years of
+    experience from 0 to 12}
+    
+\end{sidebar}
+
+%% Make the title in first page with name and jobtitle
+
+\maketoptitle
+
+%% Main document is divided into sections. The available elements are:
+%% 1. Simple list with two entries (year,description)
+%% 2. Rich list with four entries (year, title, location, description)
+%% 3. Regular text entry
+%% Note: Each entry can have a line break but has to be specified by \newline
+%% and not \\ (which breaks the table environment).
+
+\section{Education}
+
+\begin{richlist}
+  \richlistitem
+      {2014 - 2018}
+      {PhD in Science}
+      {University Name, Country}
+      {Numerical simulation of physical systems.
+      \newline Supervised by Dr King}
+   \richlistitem
+       {2013 - 2014}
+       {MPhil in Science}
+       {University Name, Country}
+       {Graduated with distinction.
+         \newline Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam
+         lobortis facilisis sem. Nullam nec mi et neque pharetra sol-
+         licitudin. Praesent imperdiet mi nec ante.}
+    \richlistitem
+       {2007 - 2012}
+       {BSc in Science}
+       {University Name, Country}
+       {Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam
+         lobortis facilisis sem. Nullam nec mi et neque pharetra sol-
+         licitudin. Praesent imperdiet mi nec ante.}
+    \richlistitem
+        {2002 - 2005}
+        {High School}
+        {School Name, Country}
+        {Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam
+          lobortis facilisis sem. Nullam nec mi et neque pharetra sol-
+          licitudin. Praesent imperdiet mi nec ante.}
+\end{richlist}
+
+\section{Work experience}
+
+\begin{richlist}
+\richlistitem
+    {2014 - 2017}
+    {Project Manager}
+    {Company Name, Country}
+    {Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam
+      lobortis facilisis sem. Nullam nec mi et neque pharetra sol-
+      licitudin. Praesent imperdiet mi nec ante.}
+\richlistitem
+    {2012 - 2014}
+    {Research Assistant}
+    {University Name, Country}
+    {Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam
+      lobortis facilisis sem. Nullam nec mi et neque pharetra sol-
+      licitudin. Praesent imperdiet mi nec ante.}
+\end{richlist}
+
+\section{Publications}
+
+\begin{simplelist}
+   \simplelistitem
+       {2018}
+       {Name1, Name2 \newline
+         \emph{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam
+          lobortis facilisis sem. Nullam nec mi et neque pharetra sol-
+          licitudin. Praesent imperdiet mi nec ante.}, \newline Journal (accepted)}
+    \simplelistitem
+        {2017}
+        {Name1, Name2 \newline\emph{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam
+          lobortis facilisis sem. Nullam nec mi et neque pharetra sol-
+          licitudin. Praesent imperdiet mi nec ante.} \newline Journal}
+\end{simplelist}
+
+
+%% When the content fills the page, it is recommended to specify the new page to
+%% avoid latex shifting text on its own.
+\newpage
+
+%% Each new page should start with specifying the sidebar and its elements.
+\begin{sidebar}
+
+  \vspace{1.15cm}
+
+  %% Languages are a table skill element.
+  \sidebarsection{Languages}
+  
+  \tableskills{Italian/\textbf{Native},English/\textbf{Excellent (C2)},German/\textbf{Basic (A2)}}
+
+  %% Qualities are a table skill element which uses stars from the fontawesome package
+  \sidebarsection{Qualities}
+  
+  \tableskills{Thinking/\faStar \faStar \faStar \faStarO \faStarO,Programming/\faStar \faStar \faStar \faStarHalfO \faStarO}
+
+  \sidebarsection{Interests}
+  
+  \tableskills{\textbf{Modelling}/Equations,\textbf{Numerical}/Methods}
+  
+  {\begin{center} \textcopyright2018 \end{center}}
+      
+\end{sidebar}
+
+\section{Conference talks}
+
+\begin{simplelist}
+   \simplelistitem
+       {2018}
+       {Name1, Name2 \newline
+         \emph{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam
+          lobortis facilisis sem. Nullam nec mi et neque pharetra sol-
+          licitudin. Praesent imperdiet mi nec ante.}, \newline 11th International Conference}
+    \simplelistitem
+        {2017}
+        {Name1, Name2 \newline\emph{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam
+          lobortis facilisis sem. Nullam nec mi et neque pharetra sol-
+          licitudin. Praesent imperdiet mi nec ante.} \newline 4th European Conference}
+    \simplelistitem
+        {2015}
+        {Name1, Name2 \newline\emph{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam
+          lobortis facilisis sem. Nullam nec mi et neque pharetra sol-
+          licitudin. Praesent imperdiet mi nec ante.} \newline 3th European Conference}
+    \simplelistitem
+        {2014}
+        {Name1, Name2 \newline
+          \emph{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam
+          lobortis facilisis sem. Nullam nec mi et neque pharetra sol-
+          licitudin. Praesent imperdiet mi nec ante.}, \newline 10th International Conference}
+\end{simplelist}
+
+\section{Awards}
+
+\begin{simplelist}
+  \simplelistitem
+      {2018}
+      {Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam
+        lobortis facilisis sem. Nullam nec mi et neque pharetra sol-
+        licitudin. Praesent imperdiet mi nec ante.}
+  \simplelistitem
+      {2015}
+      {Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam
+        lobortis facilisis sem. Nullam nec mi et neque pharetra sol-
+        licitudin. Praesent imperdiet mi nec ante.}
+  \simplelistitem
+      {2014}
+      {Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam
+        lobortis facilisis sem. Nullam nec mi et neque pharetra sol-
+        licitudin. Praesent imperdiet mi nec ante.}
+\end{simplelist}
+
+\end{document} 
