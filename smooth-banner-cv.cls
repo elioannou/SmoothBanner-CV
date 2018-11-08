@@ -32,7 +32,7 @@
 \RequirePackage{ragged2e}
 \RequirePackage{parskip}
 \RequirePackage{etoolbox}
-\RequirePackage[left=6.6cm,top=2cm,right=1.0cm,bottom=0.5cm,nohead,nofoot]{geometry}
+\RequirePackage[left=6.6cm,top=1.5cm,right=1.0cm,bottom=0.5cm,nohead,nofoot]{geometry}
 \RequirePackage{hyperref}
 \AtBeginDocument{%
   \hypersetup{%
@@ -43,7 +43,6 @@
   }
 }
 \RequirePackage{tabularx}
-\renewcommand{\arraystretch}{1.5}
 
 %%---------- Colours ----------
 
@@ -55,6 +54,8 @@
 \colorlet{sidecolour}{lightgray}
 \colorlet{headercolour}{mainblue}
 \colorlet{textcolour}{black}
+
+\newcommand{\textemph}[1]{\textbf{\textcolor{mainblue}{#1}}}
 
 %%--------- Definition of class commands ----------
 
@@ -88,7 +89,8 @@
   \hypersetup{%
     urlbordercolor=white
   }
-  \begin{textblock}{5}(1.3, 1.5)
+  \renewcommand{\arraystretch}{1.5}
+  \begin{textblock}{5}(1.3, 1)
     \begin{flushleft}
 }{%
     \end{flushleft}
@@ -125,25 +127,24 @@
                {\endtabularx}
          
 %% Sidebar section titles format
-\newcommand*{\sidebarsection}[1]{{\medskip\noindent\textcolor{black}{ \LARGE #1}}\par}
+\newcommand*{\sidebarsection}[1]{{\bigskip\noindent\textcolor{black}{ \LARGE #1}}\par}
 
-%% Skills format
+%% Bar skills format
 \newcommand\barskills[1]{%
   \noindent
   \tikz{%
     \foreach [count=\i] \x/\y in {#1}
              {%
-               \draw[fill=bargray,bargray] (0.1,-\i) rectangle (4.6,-\i+0.4);
-               \draw[fill=white,mainblue](0.1,-\i) rectangle (\y*0.3,-\i+0.4);
+               \draw[fill=bargray,bargray] (0.1,-\i) rectangle (4.8,-\i+0.4);
+               \draw[fill=white,mainblue](0.1,-\i) rectangle (\y*0.4,-\i+0.4);
                \node [above right ] at (0.1,-\i+0.38) {\x};
              }
   }
-  \bigskip
 }
 
-%% Languages format
+%% Table skills format
 \newcommand\tableskills[1]{% 
-  \def\addtablerow##1/##2!{##1 &\hfill \textcolor{mainblue}{##2}\\}
+  \def\addtablerow##1/##2!{##1 &\hfill \textemph{##2}\\}
   \renewcommand*\do[1]{\addtablerow##1!}
   \noindent
   \begin{tabularx}{\textwidth}{lX}
@@ -155,20 +156,21 @@
 %% ---------- Make title -----------
 
 \newcommand{\maketoptitle}{%
+  \renewcommand{\arraystretch}{1.25}
   \begin{flushright}
     {\Huge\textcolor{mainblue}{\givensbname\hspace{6pt}}}\\
     \ifdef{\givensbjobtitle}{\Large\textcolor{black!80}{\givensbjobtitle\hspace{6pt}}}{}
   \end{flushright}
   \hspace{-1.5cm} \textcolor{sidecolour}{\rule{1.1\linewidth}{20pt}}
+  \vspace{-10pt}
 }
 
 %% ---------- Sections style -----------
 
 \renewcommand{\section}[1]{%
-  \bigskip
+  \bigbreak
   \textcolor{headercolour}{\LARGE #1}
   \par
-  \vspace{-4pt}
 }
 
 \pagestyle{empty}
@@ -189,5 +191,10 @@
                
 \newcommand{\richlistitem}[4]{#1 & {\textcolor{black}{\textbf{#2}}} \hfill \emph{#3} \\
   & \textcolor{black!80}{#4}\\ }
+
+\newenvironment{richbullets}
+               {\vspace{-4mm} \begin{itemize}[leftmargin=*]}
+               {\end{itemize} \vspace{-4mm}}
+
 
 \endinput
