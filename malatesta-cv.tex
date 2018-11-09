@@ -5,7 +5,11 @@
 %% capabilities and features of this class
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[11pt,a4paper]{smooth-banner-cv}
+% Un-comment the dark option for the dark theme.
+\documentclass[%
+  %dark,
+  11pt,
+  a4paper]{smooth-banner-cv}
 
 % The CV class requires a name to be specified
 \sbname{Errico Malatesta} %Your name
@@ -42,7 +46,7 @@
     \icon{\faSkype} & example\\
     \icon{\faGlobe} & \href{https://example.com}{example.com}\\
     \icon{\faGithub} & \href{https://github.com/example}{example}\\
-    \icon{\faLinkedin} & \href{https://linked.com/example}{example}\\
+    \icon{\faLinkedin} & \href{https://linkedin.com/in/example}{example}\\
     %\icon{\faWhatsapp} & example\\
     %\icon{\faSlack} & example\\
     %\icon{\faTumblr} & \href{https://tumblr.com/example}{example}\\
@@ -56,7 +60,7 @@
   % Text sidebar element
   \sidebarsection{About me}
   
-  {\justifying I am a free thinker with a rebellious spirit.}
+  \sidetext{I am a free thinker with a rebellious spirit.}
 
   % Bars sidebar element
   \sidebarsection{Programming}
@@ -69,7 +73,7 @@
 
   \barskills{{HTML, CSS/10},Jekyll/8}
   
-  {\footnotesize\noindent\hspace{-5pt}(*) The scale is in years of
+  {\footnotesize\noindent\hspace{-6pt}*The scale is in years of
     experience from 0 to 12}
     
 \end{sidebar}
@@ -84,6 +88,10 @@
 %% 3. Regular text entry
 %% Note: Each entry can have a line break but has to be specified by \newline
 %% and not \\ (which breaks the table environment).
+
+\section{Currently}
+
+\regulartext{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam lobortis facilisis sem. Nullam nec mi et neque pharetra sol licitudin. Praesent imperdiet mi nec ante.}
 
 \section{Education}
 
